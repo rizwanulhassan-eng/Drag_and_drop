@@ -143,10 +143,10 @@ function createTask(taskData, columnData) {
     task.draggable = true;
 
     task.innerHTML = `
-        <div><strong>${taskData.title}</strong></div>
-        <div>${taskData.description}</div>
-        <div>Assigned to: <span class="task-assignee">${taskData.assignedTo || "Unassigned"}</span></div>
-    `;
+    <div class="task-title">${taskData.title}</div>
+    <div class="task-description">${taskData.description}</div>
+    <div>Assigned to: <span class="task-assignee">${taskData.assignedTo || "Unassigned"}</span></div>
+`;
 
     task.addEventListener("dragstart", (e) => {
         e.dataTransfer.setData("task", JSON.stringify(taskData));
@@ -175,7 +175,7 @@ function renderBoard() {
 
 addColumnButton.addEventListener("click", () => {
     let userInput = prompt("Please enter the column name:");
-    if (userInput != null) {
+    if (userInput != "") {
         const newColumn = { title: userInput, tasks: [] };
         boardData.push(newColumn);
         saveBoardData();
