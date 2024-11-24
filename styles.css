@@ -1,0 +1,182 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.kanban-board {
+    display: flex;
+    overflow-x: auto;
+    padding: 10px;
+    gap: 10px;
+    height: 100%;
+}
+
+.column {
+    flex-shrink: 0;
+    width: 300px;
+    background: #f4f4f4;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.column-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background: #ddd;
+    border-bottom: 1px solid #ccc;
+}
+
+.column-header input {
+    border: none;
+    background: transparent;
+    font-size: 16px;
+    font-weight: bold;
+    flex: 1;
+}
+
+.tasks {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+}
+
+.task {
+    background: #fff;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: grab;
+}
+
+.add-task {
+    padding: 10px;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.add-task:hover {
+    background: #0056b3;
+}
+
+.add-column {
+    margin: 10px;
+    padding: 10px;
+    background: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    align-self: flex-start;
+}
+
+.add-column:hover {
+    background: #1e7e34;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.2s, opacity 0.2s;
+}
+
+.modal.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    width: 400px;
+}
+
+.modal-content input,
+.modal-content textarea {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.modal-content button {
+    padding: 10px;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.modal-content button:hover {
+    background: #0056b3;
+}
+
+.task div {
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.task div:first-child {
+    font-weight: bold;
+    font-size: 16px;
+}
+.button-container {
+    display: flex; 
+    justify-content: flex-start; 
+    gap: 10px; 
+    margin-bottom: 20px; 
+}
+
+.add-column {
+    background-color: #4caf50; 
+    color: white;
+    font-size: 14px;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-column:hover {
+    background-color: #45a049; 
+}
+
+#logout-button {
+    background-color: #ff4d4d; 
+    color: white; 
+    font-size: 14px; 
+    padding: 6px 12px; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease; 
+}
+
+#logout-button:hover {
+    background-color: #e60000; 
+}
